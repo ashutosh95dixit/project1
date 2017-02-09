@@ -1,0 +1,50 @@
+<div class="jumbotron text-center" ng-app="">
+    <h1>Select Theatre Here</h1>
+
+    <p>{{ tagline }}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Theatre Name</th>
+                        <th>Select City</th>
+                        <th>Select Movie</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                        <td><input placeholder="Theatre Name"  ng-model="theatre.theatreName" /></td>
+                        <td><select ng-model="theatre.city">
+                                                     <option ng-repeat="city in cityList" ng-value ="city.cityName">
+                                                         {{city.cityName}}
+                                                     </option>
+                        </select></td>
+                         <td><select ng-model="theatre.movie">
+                                                     <option ng-repeat="movie in movieList" ng-value ="movie.movieName">
+                                                         {{movie.movieName}}
+                                                     </option>
+                        </select></td>
+
+                        <td><button ng-click="addTheatre(theatre)" class="btn btn-primary">Add </button>
+                        </td>
+
+                        <td><button ng-click="updateTheatre(theatre)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+                    <tr ng-repeat="theatre in theatreList">
+                      <td>{{theatre.theatreName}}</td>
+                      <td>{{theatre.cityName}}</td>
+                      <td>{{theater.movieName}}</td>
+
+                      <td><button ng-click="removeTheatre(theatre)" class="btn btn-danger">Remove</button></td>
+                      <td><button ng-click="editTheatre(theatre)" class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>

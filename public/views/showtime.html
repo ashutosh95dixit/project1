@@ -1,0 +1,36 @@
+<div class="jumbotron text-center" ng-app=".">
+    <h1>Showtime Checking</h1>
+
+    <p> {{tagline}}</p>
+
+    <div>
+        <center>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Showtime</th>
+                        <th></th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+
+
+                        <td><input ng-model="showtime.showtimeName" /></td>
+
+                        <td><button ng-click="addShowtime(showtime)" class="btn btn-primary">Add </button></td>
+
+                        <td><button ng-click="updateShowtime(Showtime)" class="btn btn-primary">Update</button></td>
+
+                    </tr>
+                    <tr ng-repeat=" showtime in showtimeList">
+                        <td>{{showtime.showtimeName}}</td>
+
+                        <td><button ng-click="removeShowtime(showtime)" class="btn btn-danger">Remove</button></td>
+                        <td><button ng-click="editShowtime(showtime)" class="btn btn-primary">Edit</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </center>
+    </div>
